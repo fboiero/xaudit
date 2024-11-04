@@ -2,7 +2,7 @@ import subprocess
 
 def run_mythril(contract_path):
     try:
-        result = subprocess.run(['myth', 'analyze', contract_path],
+        result = subprocess.run(['myth', 'analyze','--parallel-solving', contract_path],
                                 capture_output=True,
                                 text=True,
                                 #check=True

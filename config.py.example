@@ -1,0 +1,12 @@
+# config.py
+class ModelConfig:
+    use_slither = True
+    use_mythril = True
+    use_rawGPT = False
+    use_GPTLens = True
+    use_rawLlama = False
+    include_introduction = False
+    include_tools_output = False
+    include_summary = False
+    include_unitary_test = False
+    include_conclusion = False

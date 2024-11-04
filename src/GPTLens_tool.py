@@ -9,7 +9,7 @@ from src.utils import remove_spaces
 load_dotenv()
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
-def call_gpt(prompt, model='gpt-3.5-turbo-1106', temperature=0.0, max_tokens=4000, n=1, stop=None) -> list:
+def call_gpt(prompt, model='gpt-4o-mini', temperature=0.0, max_tokens=4000, n=1, stop=None) -> list:
     messages = [{"role": "user", "content": prompt}]
     if model == "gpt-4":
         pass
@@ -33,7 +33,7 @@ def get_response_auditor(contract, solidity_version):
         + auditor_format_constrain 
         + topk_prompt1.format(topk=5)
         + topk_prompt2)#.replace('{', '{{').replace('}', '}}')
-    return call_gpt(template)
+    return call_gpt(template).replace('```json','').replace('```','')
     
 def get_response_critic(audit):
     auditor_outputs = json.loads(audit)

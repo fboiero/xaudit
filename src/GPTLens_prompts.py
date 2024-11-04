@@ -22,6 +22,7 @@ auditor_format_constrain = '''\nYou should only output in below json format:
         }
     ]
 }
+
 '''
 
 ####### Critic Prompt #######
